@@ -13,9 +13,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          primaryColor: Colors.white,
-          highlightColor: Colors.transparent,
-          splashColor: Colors.transparent),
+        primaryColor: Colors.white,
+        highlightColor: Colors.transparent,
+        splashColor: Colors.transparent,
+        buttonTheme: ButtonThemeData(minWidth: 0, height: 0.0),
+      ),
       home: bottomTabbar(),
     );
   }
