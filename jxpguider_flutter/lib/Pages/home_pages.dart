@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'homepage/home_cellContent.dart';
 
 class HomePages extends StatefulWidget {
   @override
@@ -61,7 +62,7 @@ class _MainWidgetState extends State<MainWidget> {
               if (index == 1) {
                 return HomeCenterButtonWidget();
               }
-              return Text('第$index行');
+              return homeCellWidget().cellWidget();
             }));
   }
 
