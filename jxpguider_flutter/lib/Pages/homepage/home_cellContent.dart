@@ -9,33 +9,95 @@ class homeCellWidget {
       width: ScreenUtil().setWidth(750),
       child: Center(
         child: Container(
-          height: ScreenUtil().setHeight(282),
-          width: ScreenUtil().setWidth(690),
-          decoration: BoxDecoration(color: Colors.white, boxShadow: [
-            BoxShadow(
-                color: Color.fromARGB(255, 237, 237, 237),
-                offset: Offset(0.0, 3.0), //阴影xy轴偏移量
-                blurRadius: 3.0, //阴影模糊程度
-                spreadRadius: 1.0 //阴影扩散程度
-                )
-          ]),
-          child: Column(
-            children: [
-              Container(
-                alignment: Alignment.centerLeft,
-                padding: EdgeInsets.fromLTRB(15, 5, 15, 9),
-                child: Text(
-                  '清明上河园',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontFamily: 'PingFang-SC-Bold',
-                      fontWeight: FontWeight.w500,
-                      fontSize: ScreenUtil().setSp(34)),
-                ),
-              )
-            ],
-          ),
+            height: ScreenUtil().setHeight(282),
+            width: ScreenUtil().setWidth(690),
+            decoration: BoxDecoration(color: Colors.white, boxShadow: [
+              BoxShadow(
+                  color: Color.fromARGB(255, 237, 237, 237),
+                  offset: Offset(0.0, 3.0), //阴影xy轴偏移量
+                  blurRadius: 3.0, //阴影模糊程度
+                  spreadRadius: 1.0 //阴影扩散程度
+                  )
+            ]),
+            child: Container(
+              padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
+              child: Column(
+                children: [
+                  Container(
+                    alignment: Alignment.centerLeft,
+                    padding: EdgeInsets.fromLTRB(0, 5, 15, 9),
+                    child: Text(
+                      '清明上河园',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontFamily: 'PingFang-SC-Bold',
+                          fontWeight: FontWeight.w500,
+                          fontSize: ScreenUtil().setSp(34)),
+                    ),
+                  ),
+                  Container(
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          'asset/images/home_icon/collection_site@3x.png',
+                          height: 6,
+                          width: 6,
+                        ),
+                        Container(
+                          padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                          child: Text(
+                            '集合地点：清明上河园西北门',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 153, 153, 153),
+                                fontSize: ScreenUtil().setSp(26)),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('￥200'),
+                        picAndTextButton(
+                            'asset/images/home_icon/home_button_bg@3x.png',
+                            '抢单'),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    height: 0.5,
+                    color: Color.fromARGB(255, 237, 237, 237),
+                  )
+                ],
+              ),
+            )),
+      ),
+    );
+  }
+
+  //带背景图和文字的按钮
+  Widget picAndTextButton(String imgpath, String text) {
+    return Container(
+      width: 90,
+      height: 30,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        image: DecorationImage(image: AssetImage(imgpath), fit: BoxFit.fill),
+      ),
+      alignment: Alignment.center,
+      child: FlatButton(
+        onPressed: () {
+          print('抢单按钮点击');
+        },
+        child: Text(
+          text,
+          style: TextStyle(color: Colors.white, fontSize: 14),
         ),
+        color: Colors.transparent,
       ),
     );
   }
