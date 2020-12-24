@@ -68,10 +68,17 @@ class homeCellWidget {
                       ],
                     ),
                   ),
+                  SizedBox(
+                    height: 10,
+                  ),
                   Container(
                     height: 0.5,
                     color: Color.fromARGB(255, 237, 237, 237),
-                  )
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  buildCellUserInfo()
                 ],
               ),
             )),
@@ -99,6 +106,38 @@ class homeCellWidget {
         ),
         color: Colors.transparent,
       ),
+    );
+  }
+
+//底部用户信息
+  Widget buildCellUserInfo() {
+    return Row(
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(15),
+          child: Image.network(
+            'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn19%2F0%2Fw400h400%2F20180910%2F3391-hiycyfw5413589.jpg&refer=http%3A%2F%2Fn.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1611406672&t=b12cdca79b682ab47822707f37204d30',
+            width: 32,
+            height: 32,
+          ),
+        ),
+        SizedBox(
+          width: 8,
+        ),
+        Text(
+          '吃鱼的猫',
+          style: TextStyle(
+            fontSize: 17,
+            color: Color.fromARGB(255, 51, 51, 51),
+          ),
+        ),
+        Expanded(child: Container()),
+        Text(
+          '2020.12.24',
+          style: TextStyle(
+              color: Color.fromARGB(255, 179, 179, 179), fontSize: 14),
+        )
+      ],
     );
   }
 }
