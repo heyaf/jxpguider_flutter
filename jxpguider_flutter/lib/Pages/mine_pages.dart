@@ -15,15 +15,19 @@ class _MinePagesState extends State<MinePages> {
     return Container(
       child: Center(
         child: Center(
-          child: Column(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text('我的$num'),
-              Consumer(
+              SizedBox(
+                width: 50,
+              ),
+              Consumer<HYFModelProvider>(
                 builder: (context, value, child) {
                   return FloatingActionButton(
                     child: Icon(Icons.add),
                     onPressed: () {
-                      value += 5;
+                      value.num += 5;
                     },
                   );
                 },
