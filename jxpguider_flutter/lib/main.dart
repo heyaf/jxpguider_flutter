@@ -2,12 +2,16 @@
 
 import 'package:flutter/material.dart';
 import 'package:jxpguider_flutter/others/HYFTestModelProvider.dart';
+import 'package:jxpguider_flutter/others/homeBannerViewModel.dart';
 import './Pages/tabbar_pages.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider(
-    create: (context) => HYFModelProvider(100),
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: (context) => HYFModelProvider(100)),
+      ChangeNotifierProvider(create: (context) => HYFHomeBannerViewModel())
+    ],
     child: MyApp(),
   ));
 }

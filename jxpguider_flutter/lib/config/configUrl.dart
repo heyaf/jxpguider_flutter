@@ -1,5 +1,5 @@
-const baseUrl = '';
+const baseUrl = 'http://www.jxpapp.com:8185/yayguide/';
 
 const servicePath = {
-  'homepageContent': baseUrl + 'api/homePageBanner/phone/getBannerInfo'
+  'homebannerContent': baseUrl + 'api/guideBanner/phone/getGuideBannerList'
 };
